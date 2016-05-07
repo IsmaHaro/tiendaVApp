@@ -49,3 +49,6 @@ var fn = {
 		return false;
 	}
 };
+
+// EJECUTAR EN PHONEGAP
+$(fn.deviceready);
