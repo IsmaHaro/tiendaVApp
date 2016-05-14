@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>TiendaVApp</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons-1.4.5.min.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile.inline-png-1.4.5.min.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
 </head>
 <body>
-
 	<div id="registro" data-role="page">
 		<div data-role="header">
 			<h1>Registro</h1>
@@ -37,47 +37,107 @@
 		</div>
 	</div>
 
-	<div data-role="page" id="todos">
-		<div data-role="panel" id="menu">
+	<div data-role="page" id="productos">
+		<div data-role="panel" id="menu" data-display="overlay">
 			<ul data-role="listview">
 				<li>
-					<a href="#">Todos</a>
+					<a href="#productos" class="productos-link" categoria="todos">Todos</a>
 				</li>
 				<li>
-					<a href="#">Consolas</a>
+					<a href="#productos" class="productos-link" categoria="consolas">Consolas</a>
 				</li>
 				<li>
-					<a href="#">Videojuegos</a>
+					<a href="#productos" class="productos-link" categoria="videojuegos">Videojuegos</a>
 				</li>
 				<li>
-					<a href="#">Accesorios</a>
+					<a href="#productos" class="productos-link" categoria="accesorios">Accesorios</a>
 				</li>
 				<li>
-					<a href="#">Ubicación</a>
+					<a href="#ubicacion" id="boton-ubicacion" >Ubicación</a>
 				</li>
 			</ul>
-			<div data-role="footer">
+			<div data-role="footer" data-position="fixed">
 				<a href="#" data-rel="close">Cerrar</a>
 			</div>
 		</div>
 		<div data-role="header">
-			<h1>Todos los productos</h1>
+			<h1 id="tituloProductos"></h1>
+			<a href="#menu" class="ui-btn ui-icon-bars ui-btn-icon-left"><br></a>
+
 		</div>
 		<div class="ui-content">
-			<div id="productos" class="ui-grid-a">
+			<div id="productosListado" class="ui-grid-a">
 			</div>
 		</div>
 	</div>
 
-	
+	<div data-role="page" id="detalles">
+		<div data-role="header">
+			<h1>Producto</h1>
+			<a href="#" data-rel="back">
+				Atrás
+			</a>
+		</div>
+		<div class="ui-content">
+			<table id="tabla-detalle">
+				<tr>
+					<td class="imagen" colspan="2"></td>
+				</tr>
+				<tr>
+					<td>Nombre</td>
+					<td class="nombre"></td>
+				</tr>
+				<tr>
+					<td>Descripción</td>
+					<td class="descripcion"></td>
+				</tr>
+				<tr>
+					<td>Categoria</td>
+					<td class="categoria"></td>
+				</tr>
+				<tr>
+					<td>Cantidad Disponible</td>
+					<td class="cantidad"></td>
+				</tr>
+				<tr>
+					<td>Precio</td>
+					<td class="precio"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div id="ubicacion" data-role="page">
+		<div data-role="header">
+			<h1>Ubicación</h1>
+			<a href="#" data-rel="back">Atrás</a>
+		</div>
+		<div class="mapa">
+			<div id="canvas">
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		function mapa(){
+			geo.ponerMapa();
+		}
+	</script>
+
 	<script type="text/javascript" src="phonegap.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.1.min.js">
+	</script>
+	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js">
+	</script>
+
+	<script type="text/javascript" src="js/productos.json">
+	</script>
 	<script type="text/javascript" src="js/actions.js">
 	</script>
 	<script type="text/javascript" src="js/almacen.js">
 	</script>
-	<script type="text/javascript" src="js/jquery-1.12.1.min.js">
-	</script>
-	<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js">
+	<script type="text/javascript" src="js/geolocation.js">
 	</script>
 </body>
 </html>
