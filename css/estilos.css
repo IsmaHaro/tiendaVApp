@@ -21,3 +21,12 @@ img{
 		bottom
 	*/
 }
+
+#canvas{
+	width: 100%;
+	height: 90vh;
+}
+
+.mapa{
+	width: 100%;
+}
